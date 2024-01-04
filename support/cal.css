@@ -95,6 +95,33 @@ input:focus::placeholder {
     cursor:pointer;
     transition: background-color 0.3s ease, transfrom 0.1s ease;
 }
+.b .active{
+    width: 95%;
+    max-width: 95%; 
+    height:90%;
+    border: 2px outset;
+    background-color:lightgrey;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:3.5vh;
+    color:darkslategrey;
+    cursor:pointer;
+    transition: background-color 0.3s ease, transfrom 0.1s ease;
+}
+.b .active {
+    animation: scaleDown 0.3s ease-in-out;
+}
+
+@keyframes scaleDown {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.96);
+    }
+}
 .b:active{
     background-color: rgb(122, 132, 144);
     transform: scale(0.96);
