@@ -33,6 +33,28 @@ body {
     border-radius: 10px;
     background-color:lightcyan;
 }
+.text_input{
+    width: 98%;
+    max-width:390px; 
+    height: 30%;
+    border: 2px ridge;
+    border-radius: 10px;
+    background-color:rgb(227, 248, 248);
+}
+input{
+    font-size: 16px;
+    color:darkslategrey;
+}
+input:focus{
+    text-align: right;
+}
+input::placeholder {
+    color: #999; 
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
 .inputs {
     margin-top: 1%;
     width: 95%;
@@ -117,21 +139,77 @@ body {
 #clear{
     font-size: 3vh;
 }
-@media screen and (max-height: 600px) {
+
+@media screen and (max-height:385px) {
+    body{
+        margin: 2vh 0 0 0;
+    }
     .container {
-        height: 55vw;
-        width: 40vw;
+        height: 20vw;
+        width: 30vw;
     }
     .b{
-        font-size: 3vh;
+        font-size: 5vh;
+    }
+    #clear{
+        font-size: 4vh;
+    }
+    #dot{
+        font-size: 7vh;
+    }
+    #ast{
+        margin-top:5px;
+        font-size: 7vh;
+    }
+    #plus{
+        font-size: 6vh;
+    }
+    #minus{
+        font-size: 7vh;
+        margin-bottom: 2px;
+    }
+    #divide{
+        margin-top:5px;
+        font-size: 7vh;
+    }
+    #equal{
+        font-size: 6vh;
     }
 }
-@media screen and (max-width:600px) {
+@media screen and (max-width:626px) {
+    body{
+        margin: 2vh 0 0 0;
+    }
     .container {
-        height: 55vw;
-        width: 40vw;
+        height: 100vw;
+        width: 65vw;
     }
     .b{
-        font-size: 3vh;
+        font-size: 6vh;
+    }
+    #clear{
+        font-size: 5vh;
+    }
+    #dot{
+        margin-bottom: 1px;
+        font-size: 7vh;
+    }
+    #ast{
+        margin-top:5px;
+        font-size: 7vh;
+    }
+    #plus{
+        font-size: 6vh;
+    }
+    #minus{
+        font-size: 7vh;
+        margin-bottom: 2px;
+    }
+    #divide{
+        margin-top:5px;
+        font-size: 7vh;
+    }
+    #equal{
+        font-size: 6vh;
     }
 }
