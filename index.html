@@ -9,48 +9,47 @@
 <body>
     <div class="container">
         <div class='display'>
-            <input class="text_input" id="text_input" placeholder="Calculator x400  " pattern="[0-9+\-*/]*" type="text" oninput="validateInput(event)">
+            <input class="text_input" placeholder="Calculator x400  " pattern="[0-9+\-*/]*" type="text" oninput="validateInput(event)" onkeydown="focus()">
             <script>
-                function validateInput(event) {
+                function validateInput(event){
                     var inputValue = event.target.value;
-                    // Use a regular expression to check if the input contains only [0-9+\-*/]
                     if (!/^[0-9+\-*/]*$/.test(inputValue)) {
-                        // If not, remove the last entered character
                         event.target.value = inputValue.slice(0, -1);
                     };
                 };
                 function focus(){
-                    document.getElementById('text_input').focus();
-                }
+                    document.getElementsByClassName('text_input').focus();
+                };
             </script>
+            <input id="text_input" type="text" pattern="[0-9+\-*/]*" oninput="validateInput(event)">
         </div>
         <div class="inputs">
             <div class="row" id="r1">
-                <div class="b" id="1"><span id="1">1</span></div>
-                <div class="b" id="2"><span id="2">2</span></div>
-                <div class="b"id="3"><span id="3">3</span></div>
+                <div class="b" id="1" onclick="Buttonclick('1')"><span id="1">1</span></div>
+                <div class="b" id="2" onclick="Buttonclick('2')"><span id="2">2</span></div>
+                <div class="b"id="3" onclick="Buttonclick('3')"><span id="3">3</span></div>
                 <div class="b_excp">
-                    <div class="b1" id="plus"><span id="plus">+</span></div>
-                    <div class="b1" id="minus"><span id="minus">-</span></div>
+                    <div class="b1" id="plus" onclick="Buttonclick('+')"><span id="plus">+</span></div>
+                    <div class="b1" id="minus" onclick="Buttonclick('-')"><span id="minus">-</span></div>
                 </div>
             </div>
             <div class="row" id="r2">
-                <div class="b" id="4"><span id="4">4</span></div>
-                <div class="b" id="5"><span id="5">5</span></div>
-                <div class="b" id="6"><span id="6">6</span></div>
-                <div class="b"id="ast-js"><span id="ast">*</span></div>
+                <div class="b" id="4" onclick="Buttonclick('4')"><span id="4">4</span></div>
+                <div class="b" id="5" onclick="Buttonclick('5')"><span id="5">5</span></div>
+                <div class="b" id="6" onclick="Buttonclick('6')"><span id="6">6</span></div>
+                <div class="b"id="ast-js" onclick="Buttonclick('*')"><span id="ast">*</span></div>
             </div>
             <div class="row" id="r3">
-                <div class="b" id="7"><span id="7">7</span></div>
-                <div class="b" id="8"><span id="8">8</span></div>
-                <div class="b" id="9"><span id="9">9</span></div>
-                <div class="b" id="divide"><span id="divide">/</span></div>
+                <div class="b" id="7" onclick="Buttonclick('7')"><span id="7">7</span></div>
+                <div class="b" id="8" onclick="Buttonclick('8')"><span id="8">8</span></div>
+                <div class="b" id="9" onclick="Buttonclick('9')"><span id="9">9</span></div>
+                <div class="b" id="divide" onclick="Buttonclick('/')"><span id="divide">/</span></div>
             </div>
             <div class="row" id="r4">
-                <div class="b" id="dot-js"><span id="dot">.</span></div>
-                <div class="b" id="0"><span id="0">0</span></div>
-                <div class="b" id="equals"><span id="equals">=</span></div>
-                <div class="b" id="clear-js"><span id="clear">clear</span></div>
+                <div class="b" id="dot-js" onclick="Buttonclick('.')"><span id="dot">.</span></div>
+                <div class="b" id="0" onclick="Buttonclick('0')"><span id="0">0</span></div>
+                <div class="b" id="equals" onclick="Buttonclick('=')"><span id="equals">=</span></div>
+                <div class="b" id="clear-js" onmousedown="startBackspacePress()" onmouseup="stopBackspacePress()" onmouseleave="stopBackspacePress()" onclick="backspace()"><span id="clear">clear</span></div>
             </div>
         </div>
     </div>
