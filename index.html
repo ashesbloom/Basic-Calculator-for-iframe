@@ -9,7 +9,20 @@
 <body>
     <div class="container">
         <div class='display'>
-            <input class="text_input" type="number" placeholder="  Calculator x400" onkeydown="keypre(event)">
+            <input class="text_input" id="text_input" placeholder="Calculator x400  " pattern="[0-9+\-*/]*" type="text" oninput="validateInput(event)">
+            <script>
+                function validateInput(event) {
+                    var inputValue = event.target.value;
+                    // Use a regular expression to check if the input contains only [0-9+\-*/]
+                    if (!/^[0-9+\-*/]*$/.test(inputValue)) {
+                        // If not, remove the last entered character
+                        event.target.value = inputValue.slice(0, -1);
+                    };
+                };
+                function focus(){
+                    document.getElementById('text_input').focus();
+                }
+            </script>
         </div>
         <div class="inputs">
             <div class="row" id="r1">
@@ -22,22 +35,22 @@
                 </div>
             </div>
             <div class="row" id="r2">
-                <div class="b"><span id="4">4</span></div>
-                <div class="b"><span id="5">5</span></div>
-                <div class="b"><span id="6">6</span></div>
-                <div class="b"><span id="ast">*</span></div>
+                <div class="b" id="4"><span id="4">4</span></div>
+                <div class="b" id="5"><span id="5">5</span></div>
+                <div class="b" id="6"><span id="6">6</span></div>
+                <div class="b"id="ast-js"><span id="ast">*</span></div>
             </div>
             <div class="row" id="r3">
-                <div class="b"><span id="7">7</span></div>
-                <div class="b"><span id="8">8</span></div>
-                <div class="b"><span id="9">9</span></div>
-                <div class="b"><span id="divide">/</span></div>
+                <div class="b" id="7"><span id="7">7</span></div>
+                <div class="b" id="8"><span id="8">8</span></div>
+                <div class="b" id="9"><span id="9">9</span></div>
+                <div class="b" id="divide"><span id="divide">/</span></div>
             </div>
             <div class="row" id="r4">
-                <div class="b"><span id="dot">.</span></div>
-                <div class="b"><span id="0">0</span></div>
-                <div class="b"><span id="equals">=</span></div>
-                <div class="b"><span id="clear">clear</span></div>
+                <div class="b" id="dot-js"><span id="dot">.</span></div>
+                <div class="b" id="0"><span id="0">0</span></div>
+                <div class="b" id="equals"><span id="equals">=</span></div>
+                <div class="b" id="clear-js"><span id="clear">clear</span></div>
             </div>
         </div>
     </div>

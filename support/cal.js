@@ -9,12 +9,13 @@ var keyMappings = {
     '8': '8',
     '9': '9',
     '0': '0',
-    '.': 'dot',   
+    '.': 'dot-js',   
     'Enter': 'equals',
     '+': 'plus',    
     '-': 'minus',    
-    '*': 'ast',     
-    '/': 'divide'    
+    '*': 'ast-js',     
+    '/': 'divide',
+    'Backspace' : 'clear-js'    
 };
 
 function keypre(event) {
